@@ -3,10 +3,21 @@
 <head>
 
   <title>SpringBlog</title>
-  <!--css-->
+  <!--bootstrap-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!--<link rel="stylesheet" href="style/styleCss.css"/>-->
 
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
 </head>
+
 <body>
 
 <header>
@@ -26,29 +37,41 @@
       </ol>
     </nav>
 
-    <div>
-      <form method="post">
+    <div style="margin-top: 10%">
+      <th:block th:include="mensagemValidacao"></th:block>
+      <form method="post" >
 
         <div class="form-group">
           <input type="text" class="form-control" name="titulo" placeholder="Título *">
         </div>
 
-        <div class="form-group">
+        <div class="form-group" style="margin-top: 2%">
           <input type="text" class="form-control" name="autor" placeholder="Autor *">
         </div>
 
-        <textarea id="summernote" type="text" class="form-control" name="texto" placeholder="Texto *"></textarea>
+
+        <textarea style="margin-top: 2%" id="summernote" type="text" class="form-control" name="texto" placeholder="Texto*"></textarea>
 
         <small class="form-text text-muted">(*) Campos obrigatórios</small>
 
-        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publicar</button>
-        <a href="/posts" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
-        <!--<button type="submit" class="btn" style="margin-top: 10px;">Cancelar</button>-->
+        <div style="margin-top: 0.5rem; margin-bottom: 20%">
+          <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publicar</button>
+          <a href="/posts" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
+          <!--<button type="submit" class="btn" style="margin-top: 10px;">Cancelar</button>-->
+        </div>
       </form>
     </div>
 
   </div>
 </section>
+
+<script>
+    $('#summernote').summernote({
+        placeholder: 'Texto *',
+        tabsize: 2,
+        height: 300
+    });
+</script>
 
 </section>
 </body>

@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import javax.validation.constraints.NotBlank;
 
+
 @Entity
 @Table(name="TB_POST")
 public class Post {

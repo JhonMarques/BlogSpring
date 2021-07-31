@@ -42,14 +42,15 @@ public class SpringBlogController {
         return "postForm";
     }
 
-    @RequestMapping(value = "/newpost", method = RequestMethod.POST)
+    @RequestMapping(value="/newpost", method=RequestMethod.POST)
     public String savePost(@Valid Post post, BindingResult result, RedirectAttributes attributes){
         if(result.hasErrors()){
-            return "resdirect:/newpost";
+            attributes.addFlashAttribute("mensagem", "Verifique se os campos obrigatórios foram preenchidos!");
+            return "redirect:/newpost";
         }
         post.setData(LocalDate.now());
         springblogService.save(post);
-        return "redirect:posts";
+        return "redirect:/posts";
     }
 
 }
