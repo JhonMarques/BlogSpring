@@ -1,5 +1,5 @@
 ### BlogSpring
-Blog desenvolvido com springBoot e deploy na AWS
+Blog desenvolvido com springBoot e deploy na AWS (em desenvolvimento)
 
 ### End Point para acessar a aplicação:
 
